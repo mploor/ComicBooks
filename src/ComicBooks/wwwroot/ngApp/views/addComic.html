@@ -1,0 +1,35 @@
+﻿<div class="input-group">
+    <form ng-submit="controller.addComic()">
+        <table class="table table-bordered">
+            <thead class="inhead">
+                <tr>
+                    <th>Title</th>
+                    <th>Issue #</th>
+                    <th>Condition</th>
+                    <th>Purchase Price</th>
+                    <th>Value</th>
+                    <th>CGC Graded?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><select ng-model="controller.comics[0].title" ng-options="title as title.name for title in controller.titles" style="width: 300px"></select><span class="highlight"><br />{{controller.titleError[0]}}</span></td>
+                    <td align="center"><input type="text" ng-model="controller.comics[0].issueNum" size="5"/><span class="highlight"><br />{{controller.numError[0]}}</span></td>
+                    <td align="center"><select ng-model="controller.comics[0].condition" ng-options="val for val in controller.grades"/></td>
+                    <td align="center"><input type="text" ng-model="controller.comics[0].purchasePrice" size="10"/><span class="highlight"><br />{{controller.priceError[0]}}</span></td>
+                    <td align="center"><input type="text" ng-model="controller.comics[0].value" size="10"/><span class="highlight"><br />{{controller.valueError[0]}}</span></td>
+                    <td align="center"><input type="checkbox" ng-model="controller.comics[0].cgc" /></td>
+                </tr>
+                <tr ng-repeat="i in controller.index">
+                    <td><input type="text" ng-model="controller.comics[0].title.name" size="32" disabled/><span class="highlight"><br />{{controller.titleError[i]}}</span></td>
+                    <td align="center"><input type="text" ng-model="controller.comics[i].issueNum" size="5" /><span class="highlight"><br />{{controller.numError[i]}}</span></td>
+                    <td align="center"><select ng-model="controller.comics[i].condition" ng-options="val for val in controller.grades" /></td>
+                    <td align="center"><input type="text" ng-model="controller.comics[i].purchasePrice" size="10" /><span class="highlight"><br />{{controller.priceError[i]}}</span></td>
+                    <td align="center"><input type="text" ng-model="controller.comics[i].value" size="10" /><span class="highlight"><br />{{controller.valueError[i]}}</span></td>
+                    <td align="center"><input type="checkbox" ng-model="controller.comics[i].cgc" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="btn btn-default" type="submit" value="Add Comics" /><span style="color:white"> {{controller.message}}</span>
+    </form>
+</div>

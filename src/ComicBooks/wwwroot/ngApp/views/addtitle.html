@@ -1,0 +1,20 @@
+﻿<div>
+    <form ng-submit="controller.addTitle()">
+        <div class="form-group">
+            <label class="col-xs-2 formLabel">Title: </label>
+            <input type="text" ng-model="controller.title.name" />
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 formLabel">Publisher: </label>
+            <input type="text" ng-model="controller.title.publisher" />
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 formLabel">Publication Year: </label>
+            <input type="text" ng-model="controller.title.pubYear" />
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2"></label>
+            <input type="submit" value="Add Title" class="btn btn-default" />
+        </div>
+    </form>
+</div>

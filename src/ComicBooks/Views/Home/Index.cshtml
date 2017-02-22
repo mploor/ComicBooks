@@ -1,0 +1,69 @@
+<html ng-app="ComicBooks">
+<head>
+    <title>My Comic Book Collection</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" type="text/css" id="theme" href="~/css/spidey.css" />
+    <base href="/" />
+</head>
+<body ng-controller="AccountController as account">
+    <div class="container">
+        <h1>My Comic Book Collection</h1>
+
+        <nav class="navbar mynavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Collection <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/viewCollection">View My Collection</a></li>
+                        <li><a href="/viewCollectionSummary">Collection Summary</a></li>
+                        <li><a href="/addComic">Add Comics</a></li>
+                        <li><a href="/wishList">Wish List</a></li>
+                    </ul>
+                </li>
+                <li><a href="/titleSummary">Site Summary</a></li>
+                <li><a href="#" ng-show="account.getClaim('IsAdmin')" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Tools <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/addTitle">Add Title</a></li>
+                    <li><a href="/titleList">Edit/Delete Titles</a></li>
+                    <li><a href="/makeAdmin">Make Admin</a></li>
+                </ul>
+                <li><a href="/editUser" ng-show="account.isLoggedIn()">User Preferences</a></li>
+                <li><a href="/login" ng-show="!account.isLoggedIn()">Login</a><a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">Logout</a></li>
+            </ul>
+            <div ng-show="account.isLoggedIn()" class="">
+                <p class="navbar-collapse collapse navbar-text offright">{{account.getUserName()}} </p>
+            </div>
+            <div ng-show="!account.isLoggedIn()">
+                <p class="navbar-collapse collapse navbar-text navbar-right offright">Not logged in </p>
+            </div>
+        </nav>
+
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Library Files -->
+    <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!-- App Files-->
+    <script src="/ngapp/app.js"></script>
+    <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="/ngapp/services/services.js"></script>
+
+
+    <!-- Security -->
+    <script src="/ngapp/controllers/accountcontroller.js"></script>
+    <script src="/ngapp/services/accountservice.js"></script>
+
+</body>
+</html>

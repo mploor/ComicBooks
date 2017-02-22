@@ -1,0 +1,62 @@
+﻿body {
+    background-image: url('../images/spideytile.jpg');
+}
+
+h1 {
+    font-size: 4em;
+    color: white;
+}
+
+h2, h3, h4 {
+    color: white;
+}
+
+.homebox {
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.formLabel {
+    color: white;
+}
+
+.mynavbar {
+    background-color: red;
+    border-color: darkblue;
+    color: black;
+}
+
+.mynavbar .navbar-nav > li> a {
+    color: black;
+}
+
+.mynavbar .navbar-nav > li > a:hover,
+.mynavbar .navbar-nav > li > a:focus {
+    background-color: Highlight;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+    background-color: red;
+    color: white;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > thead > tr > th,
+.table-bordered > thead> tr > th {
+    background-color: blue;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: yellow;
+}
+
+.titleSelect {
+    color: white;
+}

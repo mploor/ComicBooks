@@ -1,0 +1,31 @@
+﻿
+.inhead {
+    text-align: center;
+}
+
+h1 {
+    font-family: Impact, fantasy;
+}
+
+.mymodalheader {
+    color: black;
+}
+
+.highlight {
+    background-color: white;
+    color: red;
+}
+
+.goright {
+    float: right;
+}
+
+.offright {
+    float: right;
+    margin-right: 5px;
+}
+
+.myaffix {
+    position: fixed;
+    width: 90%;
+}

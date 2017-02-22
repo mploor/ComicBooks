@@ -1,0 +1,77 @@
+﻿<h2>My Wish List</h2>
+<hr />
+
+<div>
+    <label class="titleSelect">View by title: </label>
+    <select ng-model="controller.viewChoice" style="width: 300px">
+        <option value="">* Show All *</option>
+        <option ng-repeat="title in controller.titles" value="{{title.name}}">{{title.name}}</option>
+    </select>
+    <button class="btn btn-default goright" data-toggle="modal" data-target="#addComic">Add Comic to Wish List</button>
+</div>
+
+<br />
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Issue Number</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="comic in controller.comics | orderBy:['title.name', 'issueNum'] | filter:controller.viewChoice">
+                <td>{{comic.title.name}}</td>
+                <td>{{comic.issueNum}}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="controller.bookChoice(comic)" data-toggle="modal" data-target="#delConfirm">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal" id="addComic">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mymodalheader">Add Comic to Wish List</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="col-xs-3">Title: </label>
+                        <select ng-model="controller.newComic.title" ng-options="title as title.name for title in controller.titles" style="width: 300px"></select><span class="highlight"><br />{{controller.titleError}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3">Issue Number: </label>
+                        <input type="text" ng-model="controller.newComic.issueNum" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-click="controller.addComic()" data-dismiss="modal">Add Comic</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="delConfirm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mymodalheader">Confirm Delete</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete {{controller.chosenComic.title.name}} #{{controller.chosenComic.issueNum}}?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-danger" type="button" ng-click="controller.deleteComic()" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

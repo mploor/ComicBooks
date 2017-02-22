@@ -1,0 +1,23 @@
+﻿<h3>A summary of all the books owned by members of this site</h3>
+<br />
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Publisher</th>
+                <th>Year</th>
+                <th>Books Owned</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="title in controller.titles | orderBy:'title.title'">
+                <td>{{title.title}}</td>
+                <td>{{title.publisher}}</td>
+                <td>{{title.pubYear}}</td>
+                <td>{{title.count}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

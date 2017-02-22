@@ -1,0 +1,27 @@
+<h3>Login</h3>
+<br />
+
+<fieldset>
+    <ul>
+        <li ng-repeat="error in controller.validationMessages">
+            {{error}}
+        </li>
+    </ul>
+
+    <form ng-submit="controller.login()">
+        <div class="form-group">
+            <label class="col-xs-2 formLabel">User Name:</label>
+            <input ng-model="controller.loginUser.userName" />
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 formLabel">Password:</label>
+            <input ng-model="controller.loginUser.password" type="password"/>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2"></label>
+            <input class="btn btn-default" type="submit" value="Login" />
+        </div>
+</form>
+    <br />
+    <h4>Don't have an account yet? <a href="/register">Register here!</a></h4>
+</fieldset>

@@ -1,0 +1,70 @@
+﻿body {
+    background-image: url('../images/batmanlogo.jpg');
+}
+
+h1 {
+    font-size: 4em;
+    color: white;
+}
+
+h2, h3, h4 {
+    color: white;
+}
+
+.homebox {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.formLabel {
+    color: white;
+}
+
+.mynavbar {
+    background-color: black;
+    border-color: darkslategray;
+    color: white;
+}
+
+.mynavbar .navbar-nav > li> a {
+    color: white;
+}
+
+.mynavbar .navbar-nav > li > a:hover,
+.mynavbar .navbar-nav > li > a:focus {
+    background-color: darkslategray;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+    background-color: gray;
+    color: white;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > thead > tr > th ,
+.table-bordered > thead> tr > th {
+    background-color: black;
+    color: white;
+}
+
+table-striped > tbody > tr > td > a {
+    color: white;
+}
+
+td > a {
+    color: white;
+}
+
+a:hover {
+    color: yellow;
+}
+
+td > a:hover {
+    color: yellow;
+}
+
+.titleSelect {
+    color: white;
+}

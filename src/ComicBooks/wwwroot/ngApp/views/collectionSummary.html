@@ -1,0 +1,20 @@
+﻿<h2>My collection summary</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th># of Issues</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="title in controller.titles | orderBy:'title.title'">
+            <td><a ui-sref="viewCollectionId({id: title.titleId})">{{title.title}}</a></td>
+            <td>{{title.count}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr />
+<h4>Total number of comics in collection: {{controller.totCount}}</h4>
+<h4>Total paid for comics: {{controller.totPrice | currency}}</h4>
+<h4>Total value of comics: {{controller.totValue | currency}}</h4>
