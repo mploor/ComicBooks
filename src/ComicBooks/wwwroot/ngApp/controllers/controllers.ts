@@ -157,7 +157,24 @@ namespace ComicBooks.Controllers {
             console.log(this.chosenComic.id);
             this.$http.delete("/api/comics/" + this.chosenComic.id).then((response) => {
                 this.$state.reload();
-            })
+            });
+        }
+    }
+
+    export class PicTestController {
+        public picName;
+
+        constructor(private $http: ng.IHttpService) {
+            //this.picInfo = { myFile: "C:\\programming\\FullStackClass\\WeekFour\\ProductStore\\src\\ProductStore\\wwwroot\\images\\beer_1419.jpg" };
+            //this.$http.post("/api/pictures", this.picInfo).then((response) => {
+                this.$http.get("/api/pictures").then((response) => {
+
+                });
+            //});
+        }
+
+        public selectTest(infile) {
+            console.log(infile.files[0]);
         }
     }
 }

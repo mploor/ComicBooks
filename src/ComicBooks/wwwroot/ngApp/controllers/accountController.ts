@@ -42,6 +42,7 @@ namespace ComicBooks.Controllers {
             this.accountService.login(this.loginUser).then(() => {
                 this.$location.path('/');
                 var cssFile = this.accountService.getClaim("theme");
+                if (cssFile == null) { cssFile = "/css/spidey.css"; }
                 this.accountService.setTheme(cssFile);
             }).catch((results) => {
                 this.validationMessages = results;

@@ -19,33 +19,33 @@ namespace ComicBooks.Data
             context.Database.EnsureCreated();
 
             // Ensure Stephen (IsAdmin)
-            //var stephen = await userManager.FindByNameAsync("Stephen.Walther@CoderCamps.com");
-            //if (stephen == null)
-            //{
-            //    // create user
-            //    stephen = new ApplicationUser
-            //    {
-            //        UserName = "Stephen.Walther@CoderCamps.com",
-            //        Email = "Stephen.Walther@CoderCamps.com"
-            //    };
-            //    await userManager.CreateAsync(stephen, "Secret123!");
+            var stephen = await userManager.FindByNameAsync("Stephen.Walther@CoderCamps.com");
+            if (stephen == null)
+            {
+                // create user
+                stephen = new ApplicationUser
+                {
+                    UserName = "Stephen.Walther@CoderCamps.com",
+                    Email = "Stephen.Walther@CoderCamps.com"
+                };
+                await userManager.CreateAsync(stephen, "Secret123!");
 
-            //    // add claims
-            //    await userManager.AddClaimAsync(stephen, new Claim("IsAdmin", "true"));
-            //}
+                // add claims
+                await userManager.AddClaimAsync(stephen, new Claim("IsAdmin", "true"));
+            }
 
-            //// Ensure Mike (not IsAdmin)
-            //var mike = await userManager.FindByNameAsync("Mike@CoderCamps.com");
-            //if (mike == null)
-            //{
-            //    // create user
-            //    mike = new ApplicationUser
-            //    {
-            //        UserName = "Mike@CoderCamps.com",
-            //        Email = "Mike@CoderCamps.com"
-            //    };
-            //    await userManager.CreateAsync(mike, "Secret123!");
-            //}
+            // Ensure Mike (not IsAdmin)
+            var mike = await userManager.FindByNameAsync("Mike@CoderCamps.com");
+            if (mike == null)
+            {
+                // create user
+                mike = new ApplicationUser
+                {
+                    UserName = "Mike@CoderCamps.com",
+                    Email = "Mike@CoderCamps.com"
+                };
+                await userManager.CreateAsync(mike, "Secret123!");
+            }
 
 
         }

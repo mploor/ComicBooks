@@ -85,6 +85,12 @@ namespace ComicBooks {
                 controller: ComicBooks.Controllers.RegisterController,
                 controllerAs: 'controller'
             })
+            .state('pictest', {
+                url: '/pictest',
+                templateUrl: '/ngApp/views/pictest.html',
+                controller: ComicBooks.Controllers.PicTestController,
+                controllerAs: 'controller'
+            })
             .state('externalRegister', {
                 url: '/externalRegister',
                 templateUrl: '/ngApp/views/externalRegister.html',
@@ -127,6 +133,7 @@ namespace ComicBooks {
         $httpProvider.interceptors.push('authInterceptor');
     });
 
+    // Fix navbar to top after scrolling down a bit
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
 

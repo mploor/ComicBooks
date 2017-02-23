@@ -12,6 +12,7 @@ namespace ComicBooks.Data
     {
         public DbSet<Title> Titles { get; set; }
         public DbSet<Comic> Comics { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

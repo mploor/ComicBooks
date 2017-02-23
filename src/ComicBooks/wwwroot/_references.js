@@ -9,6 +9,7 @@
 /// <reference path="../bower_components/jquery/dist/jquery.js" />
 /// <reference path="../bower_components/jquery-validation/dist/jquery.validate.js" />
 /// <reference path="../bower_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
+/// <reference path="../bower_components/ng-file-upload/ng-file-upload.js" />
 /// <reference path="ngapp/app.js" />
 /// <reference path="ngapp/controllers/accountcontroller.js" />
 /// <reference path="ngapp/controllers/controllers.js" />

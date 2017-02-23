@@ -14,7 +14,8 @@ namespace ComicBooks.Models
         public decimal Value { get; set; }
         public bool Cgc { get; set; }
         public bool WishList { get; set; }
-        public string ImageUrl { get; set; }
+        public string   ImageUrl { get; set; }
+        public int PicId { get; set; }
         public string User { get; set; }
         public Title Title { get; set; }
     }
